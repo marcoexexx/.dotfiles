@@ -1,0 +1,3 @@
+$DOTFILES/zellij/plugins=$HOME/.config/zellij/plugins
+$DOTFILES/zellij/themes=$HOME/.config/zellij/themes
+$DOTFILES/zellij/config.kdl=$HOME/.config/zellij/config.kdl

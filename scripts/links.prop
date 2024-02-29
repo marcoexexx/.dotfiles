@@ -1,0 +1,4 @@
+$DOTFILES/scripts/csv2xlsx=$HOME/.local/bin/csv2xlsx
+$DOTFILES/scripts/marco-sys=$HOME/.local/bin/marco-sys
+$DOTFILES/scripts/restart=$HOME/.local/bin/restart
+$DOTFILES/scripts/touchpad-toggle=$HOME/.local/bin/touchpad-toggle

@@ -1,0 +1,38 @@
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+deno = { command = "deno", args = [ "lsp" ]}
+
+[[language]]
+name = "javascript"
+# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "javascript" ] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "ts" ] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+
+
+#  Python
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
+
+# Rust
+[language-server.rust-analyzer.config.check]
+command = "clippy"

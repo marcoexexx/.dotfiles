@@ -1,0 +1,42 @@
+[shell]
+program = "/usr/bin/bash"
+args = ["-l", "-c", "zellij"]
+
+[window]
+opacity = 0.85
+
+[font.normal]
+family = "DroidSansM Nerd Font"
+style ="Regular"
+
+[window.dimensions]
+columns = 133
+lines = 40
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+
+[colors.primary]
+background = '0x282828'
+foreground = '0xdfbf8e'
+
+[colors.normal]
+black = '0x665c54'
+red = '0xea6962'
+green = '0xa9b665'
+yellow = '0xe78a4e'
+blue = '0x7daea3'
+magenta = '0xd3869b'
+cyan = '0x89b482'
+white = '0xdfbf8e'
+
+[colors.bright]
+black = '0x928374'
+red = '0xea6962'
+green = '0xa9b665'
+yellow = '0xe3a84e'
+blue = '0x7daea3'
+magenta = '0xd3869b'
+cyan = '0x89b482'
+white = '0xdfbf8e'

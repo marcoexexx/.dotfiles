@@ -1,0 +1,49 @@
+#!/bin/python3.10
+
+import subprocess as sp
+import logging
+from argparse import ArgumentParser
+from typing import NamedTuple
+
+COMMANDS = {
+    "clean": "sudo apt-get autoremove --purge -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y",
+    "shutdown": "shutdown now",
+    "update": "sudo apt-get update -y && sudo apt-get upgrade -y"
+}
+
+class Args(NamedTuple):
+    command_key: str
+    is_update: bool
+
+
+def parse_args() -> Args:
+    parser = ArgumentParser(description="Marco System")
+    parser.add_argument("command_key", choices=COMMANDS.keys())
+    parser.add_argument("--update", dest="is_update", action="store_true")
+    args = parser.parse_args()
+    return Args(command_key=args.command_key, is_update=args.is_update)
+
+
+def run_command():
+    (command_key, is_update) = parse_args()
+    try:
+        if is_update:
+            logging.info("Start updating command.")
+            sp.run(args=COMMANDS["update"], shell=True)
+        logging.info(f"Start {command_key}ing command.")
+        sp.run(args=COMMANDS[command_key], shell=True)
+    except Exception as e:
+        logging.error(f"Failed command with `{e}`")
+
+
+def main() -> None:
+    logging.basicConfig(
+        format="[ %(levelname)s::%(asctime)s ] %(message)s",
+        level=logging.INFO
+    )
+
+    run_command()
+
+
+if __name__ == "__main__":
+    main()

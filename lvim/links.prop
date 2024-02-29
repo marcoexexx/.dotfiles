@@ -1,0 +1,2 @@
+$DOTFILES/lvim/colors=$HOME/.config/lvim/colors
+$DOTFILES/lvim/config.lua=$HOME/.config/lvim/config.lua

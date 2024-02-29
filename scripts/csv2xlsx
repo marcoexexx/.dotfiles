@@ -1,0 +1,30 @@
+#!/bin/python3
+
+from pathlib import Path
+import sys
+import polars as pl
+
+
+def convert_csv_to_xlsx(input_csv, output_xlsx):
+    df = pl.read_csv(input_csv)
+    df.write_excel(output_xlsx)
+    print(df)
+
+
+def main():
+    input_dir = Path(sys.stdin.read().strip())
+
+    csv_files = input_dir.glob('*.csv')
+    output_dir = input_dir / Path('./xlsx_files')
+
+    output_dir.mkdir(exist_ok=True)
+
+    for csv_file in csv_files:
+        output_xlsx = output_dir / (csv_file.stem + '.xlsx')
+        convert_csv_to_xlsx(csv_file, output_xlsx)
+
+    print(input_dir)
+
+
+if __name__ == "__main__":
+    main()
