@@ -10,7 +10,9 @@
   cmdbar_bg: Some(Rgb(152, 151, 26)),
   cmdbar_extra_lines_bg: Some(Rgb(152, 151, 26)),
   
-  disabled_fg: Some(Rgb(140, 143, 161)),
+  // disabled_fg: Some(Rgb(140, 143, 161)),
+  disabled_fg: Some(Rgb(192, 192, 192)),
+
   diff_line_add: Some(Rgb(152, 151, 26)),
   diff_line_delete: Some(Rgb(204, 36, 29)),
   diff_file_added: Some(Rgb(215, 153, 33)),
@@ -21,8 +23,10 @@
   commit_time: Some(Rgb(92, 95, 119)),
   commit_author: Some(Rgb(32, 159, 181)),
   danger_fg: Some(Rgb(204, 36, 29)),
-  push_gauge_bg: Some(Rgb(30, 102, 245)),
+
+  push_gauge_bg: Some(Rgb(213, 196, 161)),
   push_gauge_fg: Some(Rgb(239, 241, 245)),
+
   tag_fg: Some(Rgb(220, 138, 120)),
   branch_fg: Some(Rgb(23, 146, 153))
 )
