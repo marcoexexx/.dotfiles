@@ -773,7 +773,7 @@ alias python = python3
 source ~/.zoxide.nu
 
 # Pyenv
-$env.PATH = ($env.PATH | append $"($env.PYENV_ROOT)/bin")
+$env.PATH = ($env.PATH | split row (char esep) | prepend $"(pyenv root)/shims")
 
 # Dotfiles
 $env.DOTFILES = "/home/marco/.dotfiles"

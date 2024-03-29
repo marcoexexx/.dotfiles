@@ -83,16 +83,24 @@ lvim.lsp.installer.setup.automatic_installation = false
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+-- linters, formatters and code actions <https://www.lunarvim.org/docs/languages#lintingformatting>
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { command = "stylua" },
+  {
+    command = "dprint",
+    filetypes = { "typescript", "typescriptreact", "toml", "python" }
+  },
+  {
+    command = "sqlfluff",
+    filetypes = { "sql" }
+  },
+  -- {
+  --   command = "prettier",
+  --   extra_args = { "--print-width", "100" },
+  --   filetypes = { "typescript", "typescriptreact" },
+  -- },
+}
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -109,13 +117,16 @@ lvim.lsp.installer.setup.automatic_installation = false
 --   },
 -- }
 
--- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
--- lvim.plugins = {
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+-- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
+lvim.plugins = {
+    -- {
+    --   "folke/trouble.nvim",
+    --   cmd = "TroubleToggle",
+    -- },
+  {
+    "tpope/vim-surround",
+  }
+}
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
