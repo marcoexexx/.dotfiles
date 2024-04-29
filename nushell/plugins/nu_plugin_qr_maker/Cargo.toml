@@ -11,6 +11,6 @@ edition = "2021"
 readme = "README.md"
 
 [dependencies]
-nu-plugin = "0.90.1"
-nu-protocol = "0.90.1"
+nu-plugin = "0.92.1"
+nu-protocol = "0.92.1"
 qr2term = { version = "0.3.1" }

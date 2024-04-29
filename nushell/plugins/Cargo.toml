@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "nu_plugin_emoji",
+  "nu_plugin_qr_maker",
+  "nu_plugin_str_similarity",
+]
+resolver = "2"

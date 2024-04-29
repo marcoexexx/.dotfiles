@@ -10,8 +10,8 @@ family = "DroidSansM Nerd Font"
 style ="Regular"
 
 [window.dimensions]
-columns = 133
-lines = 40
+columns = 145
+lines = 45
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"

@@ -772,14 +772,17 @@ alias python = python3
 # Zoxide
 source ~/.zoxide.nu
 
-# Pyenv
-$env.PATH = ($env.PATH | split row (char esep) | prepend $"(pyenv root)/shims")
+# # Pyenv
+# $env.PATH = ($env.PATH | split row (char esep) | prepend $"(pyenv root)/shims")
 
 # Dotfiles
 $env.DOTFILES = "/home/marco/.dotfiles"
 
 #  Fast Node Manager
 $env.PATH = ($env.PATH | append "/home/vaibhavdn/.fnm")
+
+# PNPM 
+$env.PATH = ($env.PATH | append "/home/marco/.local/share/pnpm")
 
 load-env (fnm env --shell bash
     | lines
